@@ -1,0 +1,200 @@
+/* pages/submitPage/submitPage.wxss */
+
+#submitPage {
+  padding-top: 36rpx;
+}
+
+#submitPage h1 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  width: 550rpx;
+}
+
+.item-row {
+  width: 702rpx;
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.05);
+  background: #fff;
+  padding: 40rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 36rpx;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title i {
+  width: 4rpx;
+  height: 36rpx;
+  background: #2672ec;
+  display: inline-block;
+}
+
+.title h2 {
+  letter-spacing: 1rpx;
+  margin-left: 24rpx;
+  color: #2672ec;
+  font-size: 32rpx;
+}
+
+/* ======================================= */
+
+.people-list {
+  margin-top: 40rpx;
+  overflow: auto;
+  height: 60vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.people-list view {
+  height: auto;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  margin-bottom: 15rpx;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.index {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.name {
+  width: 250rpx;
+  height: 45rpx;
+  overflow: hidden;
+}
+
+.people-list view input {
+  width: 150rpx;
+  height: 48rpx;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.people-list view button {
+  width: 120rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background-color: #999999;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+}
+
+.judges-list {
+  margin-top: 40rpx;
+}
+
+.judges-list image {
+  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+  border: 7rpx solid #e9f1fd;
+  margin-right: 31rpx;
+}
+
+.btns {
+  width: 702rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quit {
+  margin-left: 15rpx;
+}
+
+.btns button {
+  font-size: 32rpx;
+  color: #fff;
+  width: 702rpx;
+  line-height: 68rpx;
+  height: 72rpx;
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.05);
+  border-radius: 5rpx;
+  background: #2672ec;
+  border: 1rpx solid #2672ec;
+}
+
+.btns button[disabled]:not([type]) {
+  background: #2672ec !important;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.share-btn {
+  z-index: 50;
+  position: fixed;
+  top: 15rpx;
+  right: 24rpx;
+  width: 72rpx;
+  height: 72rpx;
+  background-color: #2672ec;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 24rpx;
+}
+
+.tip {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 60rpx 0 10rpx 0;
+}
+
+/* ================================================= */
+
+.btns button[disabled]:not([type]) {
+  color: #fff !important;
+  border-radius: 5rpx;
+  background: #2672ec !important;
+  opacity: 0.3;
+}
+
+.quit[disabled]:not([type]) {
+  color: #fff !important;
+  border-radius: 5rpx;
+  background: #999999 !important;
+  opacity: 0.3;
+}
+
+.quits {
+  background-color: #e9f1fd !important;
+  color: #2672ec !important;
+}
+
+.quits::after {
+  border: none;
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #808080;
+  flex-direction: column;
+  font-size: 36rpx;
+  letter-spacing: 1rpx;
+}
+
+.error icon {
+  margin-bottom: 35px;
+}

@@ -1,0 +1,39 @@
+<!--pages/rankDetail/rankDetail.wxml-->
+<view id='rankDetail'>
+  <h1>{{proName}}</h1>
+
+  <view class='content'>
+    <view class='content-top'>
+      <view class='name'>
+        {{data.name}}
+      </view>
+      <view class='score'>
+        <text>
+          {{data.score}}
+        </text>
+        <text>
+          {{calculate_type == 1 ?'平均分':'总得分'}}
+        </text>
+      </view>
+    </view>
+    <view class='content-bottom'>
+      <view class='title'>
+        <i></i>
+        <text>评委打分 ({{data.ranking_list.length}}) </text>
+      </view>
+      <scroll-view class='scroll-container'>
+        <view class='row-item' wx:for="{{data.ranking_list}}" wx:for-item="item" wx:key="index" >
+          <view class='left'>
+            <image src="{{name_show == 1 ? nmImg:item.judge_head}}"></image>
+            <text>{{name_show == 1 ? '匿名评委':item.judge_nick}} {{}}</text>
+          </view>
+          <view class='right'>
+            <text>
+              {{item.judge_point == -1?'弃票':item.judge_point}}
+            </text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

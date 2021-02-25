@@ -1,0 +1,282 @@
+/* pages/creation/creation.wxss */
+
+.creation {
+  padding-top: 50rpx;
+}
+
+.progress {
+  position: relative;
+  width: 702rpx;
+  height: 12rpx;
+  margin: 0 auto 120rpx auto;
+  background: #e6e6e6;
+  border-radius: 10rpx;
+}
+
+.progress .progress-width {
+  position: absolute;
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #90b6f3;
+}
+
+.item-step {
+  width: 96rpx;
+  position: absolute;
+  color: #999;
+}
+
+.item-step i {
+  transition: all 0.3s;
+  position: absolute;
+  left: calc(50% - 18rpx);
+  top: -9rpx;
+  width: 18rpx;
+  height: 18rpx;
+  background: #e6e6e6;
+  border: 7rpx solid #c9c9c9;
+  border-radius: 50%;
+}
+
+.item-step text {
+  display: block;
+  width: 96rpx;
+  font-size: 24rpx;
+  margin-top: 35rpx;
+  text-align: center;
+}
+
+.progress-active i {
+  transition: all 0.3s;
+  background: #2672ec;
+  border: 7rpx solid #90b6f3;
+  border-radius: 50%;
+  color: #2672ec;
+}
+
+.one-step {
+  left: 40rpx;
+}
+
+.two-step {
+  left: calc(50% - 48rpx);
+}
+
+.three-step {
+  right: 40rpx;
+}
+
+/* ====================== */
+
+.content {
+  width: 702rpx;
+  margin: 0 auto;
+}
+
+.content .title {
+  display: flex;
+  align-items: center;
+}
+
+.two-content .item-two {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .title i {
+  width: 4rpx;
+  height: 36rpx;
+  background: #2672ec;
+  display: inline-block;
+}
+
+.content .title h2 {
+  letter-spacing: 1rpx;
+  margin-left: 24rpx;
+  color: #2672ec;
+  font-size: 32rpx;
+}
+
+.item-row {
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.05);
+  background: #fff;
+  padding: 40rpx;
+  box-sizing: border-box;
+  margin-bottom: 51rpx;
+}
+
+.item-row:last-child {
+  margin-bottom: 0;
+}
+
+.item-row>input {
+  margin-top: 16rpx;
+  width: 622rpx;
+  height: 78rpx;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  padding: 24rpx;
+  font-size: 24rpx;
+}
+
+/* ============= */
+
+.col-item {
+  font-size: 24rpx;
+  display: flex;
+  padding: 24rpx;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  margin-top: 16rpx;
+  height: 78rpx;
+}
+
+.col-item input {
+  width: 360rpx;
+  height: 100%;
+  min-height: 100%;
+  overflow: inherit;
+}
+
+.col-item .select {
+  border-left: 1px solid #ccc;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  position: relative;
+  width: 202rpx;
+  display: flex;
+  align-items: center;
+}
+
+.col-item .select view:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select .down {
+  width: 0;
+  height: 0;
+  border-width: 15rpx 15rpx 0;
+  border-style: solid;
+  border-color: #2672ec transparent transparent; /*灰 透明 透明 */
+}
+
+.select .up {
+  width: 0;
+  height: 0;
+  border-width: 0 15rpx 15rpx;
+  border-style: solid;
+  border-color: transparent transparent #2672ec; /*透明 透明  灰*/
+}
+
+.select-list {
+  box-sizing: border-box;
+  background: #f2f2f2;
+  position: absolute;
+  top: 52rpx;
+  width: 238rpx;
+  left: 0;
+  z-index: 50;
+}
+
+.select-list view {
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.next-btn {
+  margin-top: 60rpx;
+  background-color: #2672ec;
+  color: #fff;
+  height: 96rpx;
+  border-radius: 5rpx;
+}
+
+.btns-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btns-con button {
+  width: 340rpx;
+  height: 96rpx;
+  background: #999;
+  color: #fff;
+  border-radius: 5rpx;
+  margin-top: 0;
+}
+
+.btns-con .next-btn {
+  background: #2672ec;
+  margin-left: 22rpx;
+}
+
+/* 切换框 */
+
+.wx-switch-input {
+  width: 42px !important;
+  height: 20px !important;
+}
+
+.wx-switch-input::before {
+  width: 41px !important;
+  height: 20px !important;
+}
+
+.wx-switch-input::after {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.exegesis {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* ====================== */
+
+.people-list {
+  margin-top: 40rpx;
+  height: 550rpx;
+  overflow: auto;
+}
+
+.people-list view {
+  float: left;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 20rpx 20rpx 0;
+  background-color: #eff3f9;
+  border-radius: 5px;
+  padding: 13rpx 60rpx 13rpx 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.people-list view::after {
+  position: absolute;
+  height: 92%;
+  display: flex;
+  align-items: center;
+  right: 15rpx;
+  content: '×';
+  top: 0rpx;
+  color: #999;
+  font-size: 36rpx;
+}
+
+
+button[disabled]:not([type]) {
+  opacity: 0.5;
+  height: 96rpx;
+  color: #fff !important;
+  border-radius: 5rpx;
+  background: #2672ec !important;
+}

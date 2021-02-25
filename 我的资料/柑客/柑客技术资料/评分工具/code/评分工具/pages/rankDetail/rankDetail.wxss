@@ -1,0 +1,119 @@
+/* pages/rankDetail/rankDetail.wxss */
+
+#rankDetail {
+  padding-top: 36rpx;
+}
+
+#rankDetail h1 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto 76rpx auto;
+  width: 550rpx;
+  font-size: 45rpx;
+}
+
+.content {
+  position: relative;
+  background: #fff;
+  width: 702rpx;
+  height: 70vh;
+  margin: 0 auto;
+  border-radius: 5rpx;
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.05);
+}
+
+.name {
+  width: 400rpx;
+  position: absolute;
+  top: -40rpx;
+  left: 50%;
+  margin-left: -200rpx;
+  background: #2672ec;
+  line-height: 80rpx;
+  font-weight: bol der;
+  letter-spacing: 2rpx;
+  border-radius: 10rpx;
+  height: 80rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.score {
+  height: 200rpx;
+  width: 100%;
+  padding-top: 80rpx;
+  text-align: center;
+  line-height: 23rpx;
+}
+
+.score text:first-child {
+  font-weight: bold;
+  font-size: 72rpx;
+  letter-spacing: 2rpx;
+  color: #2672ec;
+}
+
+.score text:last-child {
+  font-size: 24rpx;
+  color: #679cf2;
+  letter-spacing: 1rpx;
+}
+
+/* ======================== */
+
+.content-bottom {
+  padding: 0 40rpx;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  color: #2672ec;
+  font-size: 34rpx;
+}
+
+.row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: #666;
+  height: 100rpx;
+  padding: 0 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.title i {
+  width: 4rpx;
+  height: 34rpx;
+  background: #2672ec;
+  display: inline-block;
+}
+
+.title text {
+  letter-spacing: 1rpx;
+  margin-left: 24rpx;
+}
+
+.left image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 15rpx;
+  box-shadow: 0 0 3rpx rgba(25, 25, 25, 0.05);
+  border: 2rpx solid #ccc;
+  border-radius: 50%;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+.right text{
+  line-height: 0;
+}
+.scroll-container{
+  height: 40vh;
+}

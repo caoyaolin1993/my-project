@@ -1,0 +1,102 @@
+<!-- pages/creation/creation.wxml -->
+<view class="creation">
+	<view class="progress">
+		<i class="progress-width" style="width:{{progressWidth}}rpx"></i>
+		<view class="{{step >= 1?'item-step one-step progress-active':'item-step one-step'}}">
+			<i></i>
+			<text>基本信息</text>
+		</view>
+		<view class="{{step >= 2?'item-step two-step progress-active':'item-step two-step'}}">
+			<i></i>
+			<text>选项设置</text>
+		</view>
+		<view class="{{step >= 3?'item-step three-step progress-active':'item-step three-step'}}">
+			<i></i>
+			<text>选项设置</text>
+		</view>
+	</view>
+	<!-- 第一步 -->
+	<view style="display:{{step == 1?'block':'none'}}" class="content">
+		<form action="">
+			<view class="item-row">
+				<view class="title">
+					<i></i>
+					<h2>设置主题</h2>
+				</view>
+				<input name="input" placeholder="请输入评分主题(限12字)" maxlength='12' bindchange='titleChange' value="{{title}}"></input>
+			</view>
+			<view class="item-row">
+				<view class="title">
+					<i></i>
+					<h2>设置分值</h2>
+				</view>
+				<view class="col-item">
+					<input name="number" value='{{count}}' bindchange='numChange' maxlength='4' placeholder="请输入分值(限4字)"></input>
+					<view class="select" bindtap="selectBtn">
+						<view>
+							<text>{{selectVal==1?'平均分':'总和'}}</text>
+							<i class="{{selectType?'up':'down'}}"></i>
+						</view>
+						<view bindtap="changeScore" class="select-list" style="display:{{selectType?'block':'none'}}">
+							<view style="background:{{item.id == selectVal?'#e4ecf9':''}}" wx:for="{{select}}" wx:for-item="item" wx:key="index"
+							 data-id="{{item.id}}">
+								{{item.val}}
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<button disabled="{{btnType[0]}}" class="next-btn" bindtap='nextStep'>下一步</button>
+		</form>
+	</view>
+	<!-- 第二步 -->
+	<view style="display:{{step == 2?'block':'none'}}" class="content two-content">
+		<form action="">
+			<view class="item-row">
+				<view class="item-two">
+					<view class="title">
+						<i></i>
+						<h2>匿名评分</h2>
+					</view>
+					<switch color="#2672ec" bindchange="showName" />
+				</view>
+				<text class="exegesis">注释：结算后评委的身份信息将不会公开</text>
+			</view>
+			<!-- <view class="item-row">
+				<view class="item-two">
+					<view class="title">
+						<i></i>
+						<h2>去掉最高最低分</h2>
+					</view>
+					<switch color="#2672ec" bindchange="subtract" />
+				</view>
+				<text class="exegesis">注释：评委打出的最高与最低的分数将不被纳入计算。</text>
+			</view> -->
+			<view class="btns-con">
+				<button bindtap='prevStep'>上一步</button>
+				<button class="next-btn" bindtap='nextStep'>下一步</button>
+			</view>
+		</form>
+	</view>
+	<!-- 第三步 -->
+	<view style="display:{{step == 3?'block':'none'}}" class="content">
+		<form action="">
+			<view class="item-row" style="margin-bottom:20rpx;">
+				<view class="title">
+					<i></i>
+					<h2>添加选手</h2>
+				</view>
+				<input maxlength='10' name="input" bindchange='changeVal' placeholder="请输入选手名称(限10字)" value="{{peopleVal}}"></input>
+				<scroll-view scroll-y="true" class="people-list">
+					<view  bindtap="delPeople" wx:for="{{peopleList}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+						{{item}}
+					</view>
+				</scroll-view>
+			</view>
+		</form>
+	<view class="btns-con">
+		<button bindtap='prevStep'>上一步</button>
+		<button disabled="{{btnType[2]||doneType}}" class="next-btn" bindtap='send'>完成</button>
+	</view>
+	</view>
+</view>

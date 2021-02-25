@@ -1,0 +1,12 @@
+电竞小程序后台-接口文档：
+http://showdoc.gkgaming.cn/web/#/5
+密码：gk123456
+
+
+电竞小程序前台-接口文档：
+http://showdoc.gkgaming.cn/web/#/6
+密码：gk123456
+
+域名：
+https://gaming.gkgaming.cn
+

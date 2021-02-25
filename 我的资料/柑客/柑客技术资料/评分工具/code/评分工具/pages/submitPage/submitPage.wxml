@@ -1,0 +1,46 @@
+<!-- pages/submitPage/submitPage.wxml -->
+<view id="submitPage" wx:if="{{detailData||detailData.item}}">
+  <button open-type='share' class="share-btn">
+    邀请
+    <br />
+    评委
+  </button>
+  <h1>{{detailData.item}}</h1>
+  <view class="item-row">
+    <view class="title">
+      <i></i>
+      <h2>选手列表 ( {{detailData.score_list.length}} )</h2>
+    </view>
+    <scroll-view scroll-y="true" class="people-list">
+      <view wx:for="{{detailData.score_list}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+        <view>
+          <view class='index'>{{index+1}}</view>
+          <view class='name'>{{item.people_name}}</view>
+        </view>
+        <view>
+          <input maxlength='4' type="number" bindblur='checkNum' placeholder="{{item.judge_point ==-1?'弃票':'--'}}" data-id="{{index}}" value='{{item.judge_point == -1?undefine:item.judge_point}}' disabled='{{detailData.is_judged==1||btnDisabel}}'></input>
+          <button wx:if="{{calculate_type != 2}}" class="{{item.judge_point ==-1?'quit quits':'quit'}}" data-id="{{index}}" bindtap='giveUp' hidden='{{item.is_judged==1}}' disabled='{{detailData.is_judged==1||btnDisabel}}'>
+            {{item.judge_point ==-1?'取消':'弃票'}}
+          </button>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="tip">
+    待管理员结算后，可查看评分结果
+  </view>
+  <view class="btns">
+    <button wx:if="{{!userInfo}}" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      申请为评委
+    </button>
+    <block wx:else>
+      <button disabled='{{detailData.is_judged==1||!allSelectType||btnDisabel||btnDisabel}}' bindtap='Submit'>
+        {{detailData.is_judged==1||btnDisabel?'已提交...请耐心等待':'提交分数单'}}
+      </button>
+    </block>
+  </view>
+</view>
+<view class='error' wx:if="{{detailData&&!detailData.item}}">
+    <icon type="clear" size="60" color="rgb(221, 17, 68)"/>
+    该项目已被发起者删除，无法查看
+</view>

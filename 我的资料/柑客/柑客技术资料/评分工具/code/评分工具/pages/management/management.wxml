@@ -1,0 +1,71 @@
+<!-- pages/management/management.wxml -->
+<view class='management'>
+  <view class='header'>
+    <view data-swicthId="1" bindtap='swicthPage' class="{{pageType  == 1?' active ':' '}}">
+      待审核
+      <text>({{allData.checking.length?allData.checking.length:'0'}})</text>
+    </view>
+    <view data-swicthId="2" bindtap='swicthPage' class="{{pageType  == 2?' active ':' '}}">
+      已通过 ({{allData.approved.length?allData.approved.length:'0'}})
+    </view>
+  </view>
+  <view hidden='{{pageType  != 1}}'>
+    <scroll-view hidden="{{!allData}}" class='container' bindlongtap="checkEdit" bindtouchstart="" bindtouchend="">
+      <view bindtap='swicthCheck' class='row-item' wx:for="{{allData.checking}}" wx:for-item="item" wx:key="index" data-id="{{index}}" data-val="{{item.id}}">
+        <view class='item-left'>
+          <checkbox value="{{item.id}}" hidden="{{!editType}}" checked="{{item.checkType}}" />
+          <image class='user-icon' src='{{item.avatar_url}}' />
+          <view>
+            <h3>{{item.name}}</h3>
+            <br />
+            <text>申请成评委</text>
+          </view>
+        </view>
+        <view class='item-right'>
+          <button data-id="{{item.id}}" bindtap='passOne' hidden='{{editType}}' class='pass-btn'>
+            通过
+          </button>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='no-data' hidden="{{allData.checking}}">
+      <image src='../../image/otherPic.png' style="width:327rpx;height:288rpx;" />
+      <view>暂无评委申请</view>
+    </view>
+  </view>
+  <view hidden='{{pageType  != 2}}'>
+    <scroll-view hidden="{{!allData}}" class='container'>
+      <view class='row-item' wx:for="{{allData.approved}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+        <view class='item-left'>
+          <image class='user-icon' src='{{item.avatar_url}}' />
+          <view>
+            <h3>{{item.name}}</h3>
+            <br />
+            <text>已通过</text>
+          </view>
+        </view>
+        <view class='item-right'>
+
+        </view>
+      </view>
+    </scroll-view>
+    <view class='no-data' hidden="{{allData.approved}}">
+      <image src='../../image/otherPic.png' style="width:327rpx;height:288rpx;" />
+      <view>暂无评委通过审核</view>
+    </view>
+  </view>
+  <view class="editBar" hidden="{{!editType}}">
+    <view class="menu" hidden="{{menuType}}">
+      <button bindtap='selectAll'>全选</button>
+      <button bindtap='selectInverse'>反选</button>
+      <button bindtap='delRow'>删除</button>
+    </view>
+    <button class="menu-btn" bindtap="swicthMenu">
+      <i></i>
+      <i></i>
+      <i></i>
+    </button>
+    <button class="pass-btn" bindtap='pass'>一键通过</button>
+    <button bindtap="closeEdit">×</button>
+  </view>
+</view>

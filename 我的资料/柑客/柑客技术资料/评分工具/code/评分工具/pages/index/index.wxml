@@ -1,0 +1,107 @@
+<!-- pages/index/index.wxml -->
+
+ <form bind:submit="testSubmit" report-submit="true">
+      <button formType="submit">发送模板消息</button>
+ </form>
+
+<!-- 我的发起 -->
+<view class='initiate' hidden='{{swicthCode != 1}}'>
+  <view class='container' wx:if="{{creatData&&!creatData[0]}}">
+    <image style='width:444rpx;height:537rpx;' src='../../image/myPic.png'></image>
+    <text class='title'>暂无我发起的评分项目</text>
+    <text class='sub-title'>
+      一键邀约，自动统计评分结果
+      <br />
+      点击创建按钮，即刻体验
+    </text>
+  </view>
+
+
+
+  <!-- ===========我的发起列表============= -->
+  <scroll-view wx:else>
+    <view bindtap="joinDetail" class="{{item.project_status==0?'row-item running':'row-item'}}" wx:for="{{creatData}}" wx:for-item="item" wx:key="index" data-index='{{index}}'>
+      <image wx:if="{{item.project_status==0}}" class="white-icon" src="../../image/white-icon.png" />
+      <image wx:else class="white-icon" src="../../image/blue-icon.png" />
+      
+      <view class="creatList-del">
+        <view class="item-header">
+          <view class="creatList-title" style="color:{{item.project_status==0?'#fff':'#333'}}">
+            <text>{{item.item}}</text>
+            <view>|</view>
+            <text>{{item.project_status==0?'进行中':'已结算'}}</text>
+          </view>
+          <view class="more-list">
+            <view style="color:{{item.project_status==0?'#f0f0f0':'#193662'}}" catchtap="delProject" data-proId="{{item.id}}">×</view>
+          </view>
+        </view>
+        <view class="little-row">
+          <view class="icon icon-closeEye" wx:if='{{item.name_show==1}}'></view>
+          <view class="icon icon-openEye" wx:else></view>
+          <text style="color:{{item.project_status==0?'#fff':'#999'}}">{{item.name_show==1?'匿名评分':'实名评分'}}</text>
+        </view>
+        <view class="little-row">
+          <view class="icon icon-time"></view>
+          <text style="color:{{item.project_status==0?'#fff':'#999'}}">{{item.created_at}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 我的参与 -->
+<view class='involved' hidden='{{swicthCode != 2}}'>
+  <view class='container' wx:if="{{passData&&!passData[0]}}">
+    <image style='width:374rpx;height:288rpx;' src='../../image/otherPic.png'></image>
+    <text class='title'>暂无我参与的评分项目</text>
+  </view>
+
+
+    <!-- ===========我参与列表============= -->
+  <scroll-view wx:else>
+    <view bindtap="joinManage" class="{{item.project_status==0?'row-item running':'row-item'}}" wx:for="{{passData}}" wx:for-item="item" wx:key="index" data-index='{{index}}'>
+      <image wx:if="{{item.project_status==0}}" class="white-icon" src="../../image/white-icon.png" />
+      <image wx:else class="white-icon" src="../../image/blue-icon.png" />
+      
+      <view class="creatList-del">
+        <view class="item-header">
+          <view class="creatList-title" style="color:{{item.project_status==0?'#fff':'#333'}}">
+            <text>{{item.item}}</text>
+            <view>|</view>
+            <text>{{item.project_status==0?'进行中':'已结算'}}</text>
+          </view>
+          <view class="more-list">
+          </view>
+        </view>
+        <view class="little-row">
+          <view class="icon icon-closeEye" wx:if='{{item.name_show==1}}'></view>
+          <view class="icon icon-openEye" wx:else></view>
+          <text style="color:{{item.project_status==0?'#fff':'#999'}}">{{item.name_show==1?'匿名评分':'实名评分'}}</text>
+        </view>
+        <view class="little-row">
+          <view class="icon icon-time"></view>
+          <text style="color:{{item.project_status==0?'#fff':'#999'}}">{{item.created_at}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='nav'>
+  <ul>
+    <li class="nav-icon {{swicthCode == 1?'active-icon':''}}" bindtap="swicthLeft">
+      <view ></view>
+      我的发起
+    </li>
+    <li class="creat-btn">
+      <button wx:if="{{!userInfo}}" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        +
+      </button>
+      <block wx:else>
+        <button bindtap='creat'>+</button>
+      </block>
+    </li>
+    <li class="nav-icon {{swicthCode == 2?'active-icon':''}}" bindtap="swicthRight">
+      <view ></view>
+      我的参与
+    </li>
+  </ul>
+</view>

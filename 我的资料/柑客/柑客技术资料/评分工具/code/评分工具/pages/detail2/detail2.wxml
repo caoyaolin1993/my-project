@@ -1,0 +1,48 @@
+<!-- pages/detail/detail.wxml -->
+<view id="detail">
+    <view hidden="{{!popType}}" bindtap="swicthPop" class="black"></view>
+    <view wx:if="{{proType != 1}}" bindtap="swicthPop" class="menu">
+        <i></i>
+        <i></i>
+        <i></i>
+        <view hidden="{{!popType}}" class="menu-list">
+            <view catchtap="entryRating">打分入口</view>
+        </view>
+    </view>
+    <h1>{{detailData.item}}</h1>
+    <view class="item-row">
+        <view class="title">
+            <i></i>
+            <h2>选手列表 ( {{detailData.player_list.length}} )</h2>
+        </view>
+        <scroll-view scroll-y="true" class="people-list">
+            <view wx:for="{{detailData.player_list}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+                {{item.name}}
+            </view>
+        </scroll-view>
+    </view>
+    <view class="item-row">
+        <view class="title">
+            <i></i>
+            <h2>评委列表 ( {{detailData.judges_list.length}} )</h2>
+        </view>
+        <scroll-view scroll-y="true" class="judges-list" wx:if="{{detailData.judges_list[0]}}">
+            <view wx:for="{{detailData.judges_list}}" wx:for-item="item" wx:key="index">
+                <image data-id="{{index}}" src='{{item.avatar_url}}' />
+                <text>
+                    {{item.name}}
+                </text>
+            </view>
+        </scroll-view>
+
+        <text class="no-data" wx:else>
+            暂无评委加入
+        </text>
+    </view>
+    <view class="btns" wx:if="{{proType != 1}}">
+        <button open-type='share'>邀请评委</button>
+    </view>
+    <view class='btns' wx:else>
+      <button bindtap="ranking">排行榜</button>
+    </view>
+</view>

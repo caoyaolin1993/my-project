@@ -1,0 +1,130 @@
+/* pages/ranking/ranking.wxss */
+
+#ranking {
+  padding-top: 36rpx;
+}
+
+#ranking h1 {
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  width: 550rpx;
+  font-size: 45rpx;
+}
+
+.rank-content {
+  width: 702rpx;
+  background: #fff;
+  margin: 0 auto;
+}
+
+.three {
+  margin: 50rpx auto 0 auto;
+  width: 702rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.three view {
+  box-shadow: 0rpx 2rpx 10rpx 0px #d4e3fb;
+  text-align: center;
+  flex: 1;
+  background: #fff;
+  margin: 0 10rpx;
+  height: 232rpx;
+}
+
+.three view image {
+  margin: 0 auto 14rpx auto;
+  width: 67rpx;
+  height: 68rpx;
+  display: block;
+}
+
+.three view text {
+  display: block;
+  line-height: 1;
+}
+
+.three-title {
+  color: #666;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.three-score {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #2672ec;
+  margin: 18rpx auto 9rpx auto;
+}
+
+.three view text:last-child {
+  color: #2672ec;
+  font-size: 24rpx;
+}
+
+.three view:nth-child(2) {
+  height: 270rpx;
+}
+
+.three view:nth-child(2) image {
+  width: 101rpx;
+  height: 102rpx;
+  margin-bottom: 17.5rpx;
+}
+
+.ranking-scroll {
+  width: 702rpx;
+  height: 55vh;
+  overflow-y: scroll;
+  margin: 50rpx auto 0 auto;
+  background: #fff;
+}
+
+.ranking-scroll view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 140rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.ranking-scroll view text {
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 60rpx;
+  font-size: 28rpx;
+  color: #808080;
+}
+
+.people-name {
+  width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #808080;
+  flex-direction: column;
+  font-size: 36rpx;
+  letter-spacing: 1rpx;
+}
+
+.error icon {
+  margin-bottom: 35px;
+}

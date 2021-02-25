@@ -1,0 +1,13 @@
+接口文档：
+http://showdoc.gkgaming.cn/web/#/4
+密码：gk123456
+
+登陆账号：469882070@qq.com
+登陆密码：469882070
+
+
+AppID(小程序ID)：wxa37df5bf0ed3ed41
+AppSecret(小程序密钥)：41af43b5bb3b7561fb3f9e58d7e5a421
+
+域名：
+https://score.gkgaming.cn

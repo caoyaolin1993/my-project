@@ -1,0 +1,217 @@
+/* pages/index/index.wxss */
+
+.container {
+  height: calc(100vh - 96rpx);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 72rpx 0 28rpx 0;
+  color: #2672ec;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.sub-title {
+  font-family: MicrosoftYaHei;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 20rpx;
+}
+
+.nav .creat-btn button {
+  width: 160rpx;
+  height: 72rpx;
+  display: block;
+  background: #2672ec;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 61rpx;
+  color: #fff;
+  font-size: 70rpx;
+  font-weight: normal;
+}
+
+.row-item:first-child {
+  margin-top: 20rpx;
+}
+
+.row-item:last-child {
+  margin-bottom: 140rpx;
+}
+
+.row-item {
+  display: flex;
+  padding: 16rpx 19rpx;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.15);
+  width: 702rpx;
+  height: 150rpx;
+  margin: 0 auto 20rpx auto;
+}
+
+.running {
+  background: #2672ec;
+}
+
+.white-icon {
+  width: 92rpx;
+  height: 97rpx;
+  margin-top: 13rpx;
+}
+
+.creatList-del {
+  width: 100%;
+  color: #fff;
+  margin-left: 21rpx;
+}
+
+.creatList-del .creatList-title {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.more-list {
+  position: absolute;
+  right: 5rpx;
+  top: 0rpx;
+}
+
+.more-list view:first-child {
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+}
+
+.more-sub-list {
+  position: absolute;
+  right: 0;
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  background: #c8e1f5;
+}
+
+.creatList-del .creatList-title text {
+  max-width: 350rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.creatList-del .creatList-title view {
+  margin: 0 10rpx;
+}
+
+.little-row {
+  margin-top: 9rpx;
+  display: flex;
+  align-items: center;
+  font-size: 20rpx;
+  color: #c8e1f5;
+  letter-spacing: 2rpx;
+}
+
+.little-row image {
+  margin-right: 10rpx;
+}
+
+.item-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ============icon============= */
+
+.icon {
+  background: url('https://score.gkgaming.cn/public/static/img/pic.png') no-repeat;
+  background-size: 140rpx 103rpx;
+  margin-right: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.icon-people {
+  background-position: 0 0;
+}
+
+.icon-openEye {
+  background-position: -80rpx 0;
+}
+
+.icon-closeEye {
+  background-position: -39rpx 0;
+}
+
+.icon-time {
+  background-position: -117rpx 0;
+}
+
+/* ============================================= */
+
+.nav ul {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 96rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav ul li {
+  font-size: 22rpx;
+}
+
+.nav ul li view {
+  background: url('https://score.gkgaming.cn/public/static/img/pic.png') no-repeat;
+  background-size: 140rpx 103rpx;
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.nav ul li text {
+  display: block;
+}
+
+.nav ul li:first-child view {
+  background-position: 0 -25rpx;
+}
+
+.nav ul li:last-child view {
+  background-position: 0 -65rpx;
+}
+
+.nav ul .active-icon {
+  color: #2672ec;
+}
+
+.nav ul .active-icon:first-child view {
+  background-position: -60rpx -25rpx;
+}
+
+.nav ul .active-icon:last-child view {
+  background-position: -60rpx -65rpx;
+}
+
+.nav ul li:first-child, .nav ul li:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

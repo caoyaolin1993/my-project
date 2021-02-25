@@ -1,0 +1,48 @@
+<!--pages/ranking/ranking.wxml-->
+<view id='ranking' >
+<view wx:if="{{rankingData || rankingData.item}}">
+  <h1>{{rankingData.item}}</h1>
+  <view class='three'>
+    <view data-id="{{rankingData.ranking_list[1].people_id}}" bindtap='joinDetail'>
+      <image src='../../image/No2.png'></image>
+      <text class='three-title'>{{rankingData.ranking_list[1].people_name}} </text>
+      <text class='three-score'>{{rankingData.ranking_list[1].score}}</text>
+      <text>{{rankingData.calculate_type == 1 ?'平均分':'总得分'}}</text>
+    </view>
+    <view data-id="{{rankingData.ranking_list[0].people_id}}" bindtap='joinDetail'>
+      <image src='../../image/No1.png'></image>
+      <text class='three-title'>{{rankingData.ranking_list[0].people_name}}</text>
+      <text class='three-score'>{{rankingData.ranking_list[0].score}}</text>
+      <text>{{rankingData.calculate_type == 1 ?'平均分':'总得分'}}</text>
+    </view>
+    <view data-id="{{rankingData.ranking_list[2].people_id}}" bindtap='joinDetail'>
+      <image src='../../image/No3.png'></image>
+      <text class='three-title'>{{rankingData.ranking_list[2].people_name}}</text>
+      <text class='three-score'>{{rankingData.ranking_list[2].score}}</text>
+      <text>{{rankingData.calculate_type == 1 ?'平均分':'总得分'}}</text>
+    </view>
+  </view>
+  <view class='ranking-scroll'>
+    <scroll-view>
+      <view wx:for="{{scrollData}}" wx:for-item="item" wx:key="index" data-id="{{item.people_id}}" bindtap='joinDetail'>
+        <text>
+          {{index + 4}}
+        </text>
+        <text class='people-name'>
+          {{item.people_name}}
+        </text>
+        <text>
+          {{item.score}}
+        </text>
+        <text>
+          〉
+        </text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='error' wx:if="{{rankingData && !rankingData.item}}">
+    <icon type="clear" size="60" color="rgb(221, 17, 68)"/>
+    该项目已被发起者删除，无法查看
+</view>
+</view>

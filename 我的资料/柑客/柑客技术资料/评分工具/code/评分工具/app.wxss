@@ -1,0 +1,46 @@
+/**app.wxss**/
+page{
+    background: #fafafa;
+    min-height: 100vh;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1085612 */
+  src: url('//at.alicdn.com/t/font_1085612_hw72vt1f5y5.eot');
+  src: url('//at.alicdn.com/t/font_1085612_hw72vt1f5y5.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1085612_hw72vt1f5y5.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1085612_hw72vt1f5y5.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1085612_hw72vt1f5y5.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1085612_hw72vt1f5y5.svg#iconfont') format('svg');
+}
+
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  margin-right: 5rpx;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icondafen:before {
+  content: "\e609";
+}
+
+.icondingdan:before {
+  content: "\e60e";
+}
+
+.iconyaoqing:before {
+  content: "\e69f";
+}
+
+.iconbianji:before {
+  content: "\e706";
+}
+
+.iconpingweizhuanjia:before {
+  content: "\e61e";
+}
+

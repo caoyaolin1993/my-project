@@ -1,0 +1,134 @@
+<!-- pages/detail/detail.wxml -->
+<view id="detail">
+  <view class='user_black' wx:if="{{!userInfo}}">
+    <view>
+      <text>
+        为保证您能正常使用 <br/>
+        评分工具。需要获取您的授权
+      </text>
+      <button wx:if="{{!userInfo}}" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        获取授权
+      </button>
+    </view>
+
+  </view>
+  <!-- 修改弹框 -->
+  <view hidden="{{editType}}" class="black">
+    <view class='edit-pop'>
+      <view class='edit-pop-head'>
+        <ul>
+          <li class="{{editActive==index?'edit-active':''}}" wx:for="{{editMenu}}" wx:for-item="item" wx:key="index" data-index='{{index}}' catchtap="swicthEdit">
+            {{item.title}}
+          </li>
+        </ul>
+      </view>
+      <view class='edit-pop-content'>
+        <ul>
+          <li wx:if="{{editActive==0}}">
+            <view class="edit-row">
+              <view class="title">
+                <i></i>
+                <h2>设置主题</h2>
+              </view>
+              <input name="input" placeholder="请输入评分主题(限12字)" maxlength='12' bindchange='titleChange' value="{{editTitle}}"></input>
+            </view>
+          </li>
+          <li wx:if="{{editActive==1}}">
+            <view>
+              <form action="">
+                <view class="edit-row">
+                  <view class="title">
+                    <i></i>
+                    <h2>编辑选手</h2>
+                  </view>
+                  <input maxlength='10' name="input" bindchange='changeVal' placeholder="请输入选手名称(限10字)" value="{{peopleVal}}"></input>
+                  <scroll-view scroll-y="true" class="people-list">
+                    <view bindtap="delPeople" wx:for="{{peopleList}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+                      {{item}}
+                    </view>
+                  </scroll-view>
+                </view>
+              </form>
+            </view>
+          </li>
+          <!-- <li wx:if="{{editActive==2}}">
+            <view class="edit-row">
+              <view class="item-two">
+                <view class="title">
+                  <i></i>
+                  <h2>去掉最高最低分</h2>
+                </view>
+                <switch color="#2672ec" bindchange="subtract" checked='{{subtract_point==1?true:false}}'/>
+              </view>
+              <text class="exegesis">注释：评委打出的最高与最低的分数将不被纳入计算。</text>
+            </view>
+          </li> -->
+        </ul>
+      </view>
+      <view class='edit-foot'>
+        <button bindtap='edit' disabled='{{!editBtnType}}'>
+          确认修改
+        </button>
+      </view>
+    </view>
+    <view class='close-btn' bindtap="closePop">×</view>
+  </view>
+
+  <!-- 弹框 -->
+  <h1>{{detailData.item}}</h1>
+  <view class="item-row">
+    <view class="title">
+      <i></i>
+      <h2>选手列表 ( {{detailData.player_list.length}} )</h2>
+    </view>
+    <scroll-view scroll-y="true" class="people-list">
+      <view wx:for="{{detailData.player_list}}" wx:for-item="item" wx:key="index" data-id="{{index}}">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="item-row">
+    <view class="title">
+      <i></i>
+      <h2>待打分评委列表 ( {{judgesListData.length}} )</h2>
+    </view>
+    <scroll-view scroll-y="true" class="judges-list" wx:if="{{judgesListData[0]}}">
+      <view wx:for="{{judgesListData}}" wx:for-item="item" wx:key="index">
+        <image data-id="{{index}}" src='{{item.avatar_url}}' />
+        <text>
+            {{item.name}}
+        </text>
+      </view>
+    </scroll-view>
+
+    <text class="no-data" wx:else>
+        暂无
+    </text>
+  </view>
+  <view hidden="{{menuType}}"  class='btnList'>
+    <view bindtap="joinEdit">
+      <view class="iconfont iconbianji"></view>
+      <text>编辑</text>
+    </view>
+    <button open-type='share'>
+      <view class="iconfont iconyaoqing"></view>
+      <text>邀请评委</text>
+    </button>
+    <view bindtap='done'>
+      <view class="iconfont icondingdan" style='font-size:45rpx;'></view>
+      <text>结算</text>
+    </view>
+  </view>
+  <view hidden="{{menuType}}"  class="btns" wx:if="{{proType != 1}}">
+    <button bindtap="manage" class=''>
+      <text class="iconfont iconpingweizhuanjia" style='opacity:.5;'></text> 评委管理
+    </button>
+    <button bindtap="entryRating">
+      <text class="iconfont icondafen" style='opacity:.5;' ></text>打分入口
+    </button>
+    <text class='badge' wx:if="{{badgeData.checking}}">{{badgeData.checking.length}}</text>
+  </view>
+  <view class='btns_' wx:else>
+    <button bindtap="ranking">排行榜</button>
+  </view>
+</view>

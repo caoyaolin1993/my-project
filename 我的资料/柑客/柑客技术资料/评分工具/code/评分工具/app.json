@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/application/application",  
+    "pages/management/management",
+    "pages/detail2/detail2",
+    "pages/rankDetail/rankDetail",
+    "pages/ranking/ranking",
+    "pages/submitPage/submitPage",
+    "pages/creation/creation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "评分小工具",
+    "navigationBarTextStyle": "black"
+  }
+}

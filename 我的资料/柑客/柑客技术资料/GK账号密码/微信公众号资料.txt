@@ -1,0 +1,47 @@
+微信订阅号登录
+AppID：wxb6869e2c96331118
+AppSecret：fec6554791bfdabdccc28fa76cf2109e
+
+账号：13043483624@163.com
+密码：boomboom123
+
+
+微信服务号登录
+
+AppID：wx36cf42124786ab8c
+AppSecret：e15f1920f151b35b7b7278d7cfdccb28
+
+公众号
+
+wangguan@gkgaming.cn
+gkzlj123456
+
+ // $appId = "wxd05201280cfe3e62"; 
+        // $appSecret = "e8f00bb72592655903ca1a6b5b6cd8e7";
+
+//已弃用
+gkzhang999@sina.com
+gkzlj123456
+
+账号：boomboom11@126.com
+密码：boomboom123
+h5-test.gkgaming.cn
+
+http://h5-test.gkgaming.cn/scan_code/login.html
+
+
+http://boom.gkgaming.cn/scan_code/login.html
+
+
+微信开发平台
+
+账号: kfpt@gkgaming.cn
+密码:
+
+
+
+
+
+
+
+

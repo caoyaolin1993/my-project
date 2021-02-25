@@ -1,0 +1,246 @@
+/* pages/management/management.wxss */
+
+/* 头部切换 */
+.management{
+padding-bottom: 126rpx;
+}
+.header {
+  width: 702rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header>view {
+  transition: all .3s;
+  font-size: 30rpx;
+  padding: 18rpx 0;
+  width: 300rpx;
+  text-align: center;
+  color: #666;
+  border-bottom: 4rpx solid rgba(0, 0, 0, 0);
+}
+
+.header>view:last-child {
+  margin-right: 0;
+}
+
+.header>.active {
+  transition: all .3s;
+  color: #2672ec;
+  border-bottom: 4rpx solid #2672ec;
+}
+
+/* 主体内容 */
+
+.container {
+  width: 720rpx;
+  margin: 26rpx auto 0 auto;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.05);
+  border-radius: 5px;
+  
+}
+
+/* 每行样式 */
+
+.row-item {
+  padding: 30rpx;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-item:last-child {
+  border-bottom: none;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+}
+
+.item-left .user-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.2);
+}
+
+.item-left view h3 {
+  width: 280rpx;
+  color: #666;
+  font-size: 32rpx;
+  display: block;
+}
+
+.item-left view text {
+  display: block;
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+.pass-btn {
+  width: 120rpx;
+  height: 48rpx;
+  background-color: #2672ec;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #fff;
+}
+
+.no-data {
+  box-shadow: 0px 2px 8px 0px rgba(25, 25, 25, 0.05);
+  border-radius: 5px;
+  width: 702rpx;
+  margin: 40rpx auto 0 auto;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1024rpx;
+  flex-direction: column;
+  color: #2672ec;
+  font-size: 34rpx;
+  letter-spacing: 1rpx;
+}
+
+/*checkbox 整体大小  */
+checkbox {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border: none;
+}
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 50rpx;
+  border-radius: 50%;
+  height: 50rpx;
+
+  margin: 10rpx;
+}
+
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  /* background: #FF525C; */
+  background: #e9f1fd;
+  border: none;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #2672ec;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.editBar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 96rpx;
+  background: #999999;
+  display: flex;
+  align-items: center;
+
+}
+
+.editBar button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 38rpx;
+  height: 30rpx;
+  width: 30rpx;
+  line-height: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button::after {
+  border: none;
+  font-weight: bold;
+}
+.editBar>button:last-child{
+  padding-bottom: 8rpx;
+  font-size: 48rpx;
+}
+
+.editBar .pass-btn {
+  width: 220rpx;
+  height: 72rpx;
+  background-color: #ffffff;
+  border-radius: 5rpx;
+  line-height: 72rpx;
+  font-size: 32rpx;
+  color: #2672ec;
+  border: none;
+}
+
+.button-hover {
+  border: none;
+}
+
+.menu-btn {
+  position: relative;
+  z-index: 50;
+  display: block;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.menu-btn i {
+  width: 30rpx;
+  height: 4rpx;
+  position: absolute;
+  background: #fff;
+}
+
+.menu-btn i:first-child {
+  top: 0;
+  left: 10rpx;
+}
+
+.menu-btn i:nth-child(2) {
+  top: 10rpx;
+  left: 10rpx;
+}
+
+.menu-btn i:nth-child(3) {
+  top: 20rpx;
+  left: 10rpx;
+}
+.menu{
+  position: absolute;
+  z-index: 60;
+  bottom: 96rpx;
+  left: 0;
+  width: 240rpx;
+	height: 300rpx;
+	background-color: #ffffff;
+	box-shadow: 0px 2rpx 8rpx 0px 
+		rgba(25, 25, 25, 0.15);
+	border-radius: 5rpx;
+}
+.menu button{
+  text-align: center;
+  letter-spacing: 3rpx;
+  color: #333333;
+  height: 100rpx;
+  width: 100%;
+  font-size: 27rpx;
+}
